@@ -280,6 +280,37 @@ export default function FeaturedProjects() {
                         </motion.div>
                     ))}
                 </div>
+                {/* CTA */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                    style={{ textAlign: 'center', marginTop: '56px' }}
+                >
+                    <Link
+                        to="/projects"
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            padding: '14px 32px',
+                            background: 'transparent',
+                            border: '1px solid var(--border-accent)',
+                            borderRadius: '12px',
+                            color: 'var(--accent)',
+                            textDecoration: 'none',
+                            fontFamily: 'Syne, sans-serif',
+                            fontWeight: '600',
+                            fontSize: '0.9rem',
+                            transition: 'all 0.3s ease',
+                        }}
+                        onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0,212,255,0.08)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(0,212,255,0.1)'; }}
+                        onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.boxShadow = 'none'; }}
+                    >
+                        Explore All Services <FiArrowRight />
+                    </Link>
+                </motion.div>
             </div>
         </section>
     );

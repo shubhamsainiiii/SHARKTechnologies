@@ -154,13 +154,13 @@ export default function Footer() {
                                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                                 onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
                             >
-                                hello@nexora.dev
+                                sharktechnologies@gmail.com
                             </a>
                             <a href="tel:+919999999999" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', textDecoration: 'none', transition: 'color 0.2s' }}
                                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                                 onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
                             >
-                                +91 99999 99999
+                                +91 7691888950
                             </a>
                             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: '1.5' }}>
                                 India — Remote Worldwide
