@@ -42,6 +42,7 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import Footer from './components/common/Footer';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import BlogDetailPage from './pages/BlogDetailPage';
+import ServiceDetailPage from './pages/Servicedetailpage';
 
 
 
@@ -55,6 +56,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetailPage />} />
             <Route path="/blog" element={<BlogPage />} />
