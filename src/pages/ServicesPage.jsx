@@ -5,42 +5,45 @@
 // import { techCategories } from '../constants/techStack';
 // import CtaBanner from '../components/home/CtaBanner';
 
-// // Tech icons — inline SVG logos as data URIs / simple colored icons
+// import {
+//     SiReact, SiNextdotjs, SiVuedotjs, SiTypescript, SiTailwindcss, SiFramer,
+//     SiNodedotjs, SiExpress, SiNestjs, SiPython, SiDjango, SiFastapi,
+//     SiMongodb, SiPostgresql, SiMysql, SiRedis, SiFirebase, SiSupabase,
+//     SiCloudflare, SiDocker, SiKubernetes, SiVercel, SiNetlify,
+//     SiReact as SiReactNative, SiFlutter, SiExpo, SiAndroid, SiApple,
+//     SiGithubactions,
+// } from 'react-icons/si';
+
 // const techIcons = {
-//     // Frontend
-//     'React': { bg: '#61DAFB22', color: '#61DAFB', letter: 'R', symbol: '⚛' },
-//     'Next.js': { bg: '#ffffff15', color: '#ffffff', letter: 'N', symbol: 'N' },
-//     'Vue.js': { bg: '#42b88322', color: '#42b883', letter: 'V', symbol: '◈' },
-//     'TypeScript': { bg: '#3178c622', color: '#3178c6', letter: 'T', symbol: 'TS' },
-//     'Tailwind CSS': { bg: '#06B6D422', color: '#06B6D4', letter: 'T', symbol: '~' },
-//     'Framer Motion': { bg: '#FF0080' + '22', color: '#FF0080', letter: 'F', symbol: '◉' },
-//     // Backend
-//     'Node.js': { bg: '#68A06322', color: '#68A063', letter: 'N', symbol: '⬡' },
-//     'Express.js': { bg: '#ffffff12', color: '#aaaaaa', letter: 'E', symbol: '✦' },
-//     'NestJS': { bg: '#E0234E22', color: '#E0234E', letter: 'N', symbol: '△' },
-//     'Python': { bg: '#3776AB22', color: '#3776AB', letter: 'P', symbol: '🐍' },
-//     'Django': { bg: '#09241522', color: '#0C4B33', letter: 'D', symbol: '♦' },
-//     'FastAPI': { bg: '#05998022', color: '#059980', letter: 'F', symbol: '⚡' },
-//     // Database
-//     'MongoDB': { bg: '#47A24822', color: '#47A248', letter: 'M', symbol: '🍃' },
-//     'PostgreSQL': { bg: '#33679122', color: '#336791', letter: 'P', symbol: '🐘' },
-//     'MySQL': { bg: '#4479A122', color: '#4479A1', letter: 'M', symbol: '◎' },
-//     'Redis': { bg: '#DC382D22', color: '#DC382D', letter: 'R', symbol: '◈' },
-//     'Firebase': { bg: '#FFCA2822', color: '#FFCA28', letter: 'F', symbol: '🔥' },
-//     'Supabase': { bg: '#3ECF8E22', color: '#3ECF8E', letter: 'S', symbol: '⚡' },
-//     // DevOps
-//     'AWS': { bg: '#FF980022', color: '#FF9800', letter: 'A', symbol: '☁' },
-//     'Docker': { bg: '#2496ED22', color: '#2496ED', letter: 'D', symbol: '🐳' },
-//     'Kubernetes': { bg: '#326CE522', color: '#326CE5', letter: 'K', symbol: '⎈' },
-//     'Vercel': { bg: '#ffffff15', color: '#ffffff', letter: 'V', symbol: '▲' },
-//     'Netlify': { bg: '#00C7B722', color: '#00C7B7', letter: 'N', symbol: '◆' },
-//     'CI/CD': { bg: '#FF6B3522', color: '#FF6B35', letter: 'C', symbol: '↻' },
-//     // Mobile
-//     'React Native': { bg: '#61DAFB22', color: '#61DAFB', letter: 'R', symbol: '⚛' },
-//     'Flutter': { bg: '#54C5F822', color: '#54C5F8', letter: 'F', symbol: '◇' },
-//     'Expo': { bg: '#ffffff15', color: '#aaaaaa', letter: 'E', symbol: '○' },
-//     'iOS': { bg: '#999aaa22', color: '#aaaaaa', letter: 'i', symbol: '' },
-//     'Android': { bg: '#3DDC8422', color: '#3DDC84', letter: 'A', symbol: '🤖' },
+//     'React': { Icon: SiReact, color: '#61DAFB' },
+//     'Next.js': { Icon: SiNextdotjs, color: '#ffffff' },
+//     'Vue.js': { Icon: SiVuedotjs, color: '#42b883' },
+//     'TypeScript': { Icon: SiTypescript, color: '#3178c6' },
+//     'Tailwind CSS': { Icon: SiTailwindcss, color: '#06B6D4' },
+//     'Framer Motion': { Icon: SiFramer, color: '#FF0080' },
+//     'Node.js': { Icon: SiNodedotjs, color: '#68A063' },
+//     'Express.js': { Icon: SiExpress, color: '#aaaaaa' },
+//     'NestJS': { Icon: SiNestjs, color: '#E0234E' },
+//     'Python': { Icon: SiPython, color: '#3776AB' },
+//     'Django': { Icon: SiDjango, color: '#0C4B33' },
+//     'FastAPI': { Icon: SiFastapi, color: '#059980' },
+//     'MongoDB': { Icon: SiMongodb, color: '#47A248' },
+//     'PostgreSQL': { Icon: SiPostgresql, color: '#336791' },
+//     'MySQL': { Icon: SiMysql, color: '#4479A1' },
+//     'Redis': { Icon: SiRedis, color: '#DC382D' },
+//     'Firebase': { Icon: SiFirebase, color: '#FFCA28' },
+//     'Supabase': { Icon: SiSupabase, color: '#3ECF8E' },
+//     'AWS': { Icon: SiCloudflare, color: '#FF9800' },
+//     'Docker': { Icon: SiDocker, color: '#2496ED' },
+//     'Kubernetes': { Icon: SiKubernetes, color: '#326CE5' },
+//     'Vercel': { Icon: SiVercel, color: '#ffffff' },
+//     'Netlify': { Icon: SiNetlify, color: '#00C7B7' },
+//     'CI/CD': { Icon: SiGithubactions, color: '#2088FF' },
+//     'React Native': { Icon: SiReactNative, color: '#61DAFB' },
+//     'Flutter': { Icon: SiFlutter, color: '#54C5F8' },
+//     'Expo': { Icon: SiExpo, color: '#aaaaaa' },
+//     'iOS': { Icon: SiApple, color: '#aaaaaa' },
+//     'Android': { Icon: SiAndroid, color: '#3DDC84' },
 // };
 
 // const categoryIcons = {
@@ -97,7 +100,7 @@
 //                                 gap: '10px',
 //                             }}>
 //                                 {cat.techs.map((tech, techIdx) => {
-//                                     const icon = techIcons[tech] || { bg: `${cat.color}15`, color: cat.color, symbol: tech[0] };
+//                                     const icon = techIcons[tech] || { Icon: () => <span style={{ fontWeight: 700, fontSize: '0.8rem' }}>{tech[0]}</span>, color: cat.color };
 //                                     return (
 //                                         <motion.div
 //                                             key={tech}
@@ -122,16 +125,14 @@
 //                                             {/* Icon box */}
 //                                             <div style={{
 //                                                 width: '38px', height: '38px',
-//                                                 background: icon.bg,
+//                                                 background: `${icon.color}15`,
 //                                                 border: `1px solid ${icon.color}25`,
 //                                                 borderRadius: '10px',
 //                                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-//                                                 fontSize: icon.symbol.length <= 2 ? '1rem' : '1.2rem',
+//                                                 fontSize: '20px',
 //                                                 color: icon.color,
-//                                                 fontFamily: 'Syne, sans-serif',
-//                                                 fontWeight: '800',
 //                                             }}>
-//                                                 {icon.symbol}
+//                                                 <icon.Icon />
 //                                             </div>
 //                                             {/* Name */}
 //                                             <span style={{
@@ -388,6 +389,8 @@
 //     );
 // }
 
+
+
 import { motion } from 'framer-motion';
 import { FiGlobe, FiSmartphone, FiLayout, FiServer, FiCloud, FiTrendingUp, FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
@@ -399,10 +402,15 @@ import {
     SiReact, SiNextdotjs, SiVuedotjs, SiTypescript, SiTailwindcss, SiFramer,
     SiNodedotjs, SiExpress, SiNestjs, SiPython, SiDjango, SiFastapi,
     SiMongodb, SiPostgresql, SiMysql, SiRedis, SiFirebase, SiSupabase,
-    SiCloudflare , SiDocker, SiKubernetes, SiVercel, SiNetlify,
-    SiReact as SiReactNative, SiFlutter, SiExpo, SiAndroid, SiApple,
-    SiGithubactions,
+    SiDocker, SiKubernetes, SiVercel, SiNetlify,
+    SiFlutter, SiExpo, SiAndroid, SiApple,
+    SiGithubactions, SiAlibabacloud,
 } from 'react-icons/si';
+
+// AWS — no official Si icon in this version, use text badge
+const AwsIcon = () => (
+    <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: '900', fontSize: '0.62rem', letterSpacing: '-0.02em', color: '#FF9900' }}>AWS</span>
+);
 
 const techIcons = {
     'React': { Icon: SiReact, color: '#61DAFB' },
@@ -415,7 +423,7 @@ const techIcons = {
     'Express.js': { Icon: SiExpress, color: '#aaaaaa' },
     'NestJS': { Icon: SiNestjs, color: '#E0234E' },
     'Python': { Icon: SiPython, color: '#3776AB' },
-    'Django': { Icon: SiDjango, color: '#0C4B33' },
+    'Django': { Icon: SiDjango, color: '#44B78B' },
     'FastAPI': { Icon: SiFastapi, color: '#059980' },
     'MongoDB': { Icon: SiMongodb, color: '#47A248' },
     'PostgreSQL': { Icon: SiPostgresql, color: '#336791' },
@@ -423,13 +431,13 @@ const techIcons = {
     'Redis': { Icon: SiRedis, color: '#DC382D' },
     'Firebase': { Icon: SiFirebase, color: '#FFCA28' },
     'Supabase': { Icon: SiSupabase, color: '#3ECF8E' },
-    'AWS': { Icon: SiCloudflare , color: '#FF9800' },
+    'AWS': { Icon: AwsIcon, color: '#FF9900' },
     'Docker': { Icon: SiDocker, color: '#2496ED' },
     'Kubernetes': { Icon: SiKubernetes, color: '#326CE5' },
     'Vercel': { Icon: SiVercel, color: '#ffffff' },
     'Netlify': { Icon: SiNetlify, color: '#00C7B7' },
     'CI/CD': { Icon: SiGithubactions, color: '#2088FF' },
-    'React Native': { Icon: SiReactNative, color: '#61DAFB' },
+    'React Native': { Icon: SiReact, color: '#61DAFB' },
     'Flutter': { Icon: SiFlutter, color: '#54C5F8' },
     'Expo': { Icon: SiExpo, color: '#aaaaaa' },
     'iOS': { Icon: SiApple, color: '#aaaaaa' },
@@ -485,9 +493,10 @@ function TechStackSection() {
 
                             {/* Tech cards */}
                             <div style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
+                                display: 'flex',
+                                flexWrap: 'wrap',
                                 gap: '10px',
+                                justifyContent: 'center',
                             }}>
                                 {cat.techs.map((tech, techIdx) => {
                                     const icon = techIcons[tech] || { Icon: () => <span style={{ fontWeight: 700, fontSize: '0.8rem' }}>{tech[0]}</span>, color: cat.color };
@@ -508,6 +517,8 @@ function TechStackSection() {
                                                 alignItems: 'center', gap: '8px',
                                                 cursor: 'default',
                                                 transition: 'border-color 0.2s',
+                                                width: '120px',
+                                                flexShrink: 0,
                                             }}
                                             onMouseEnter={e => e.currentTarget.style.borderColor = `${cat.color}40`}
                                             onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
