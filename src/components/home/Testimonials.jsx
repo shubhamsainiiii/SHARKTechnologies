@@ -9,7 +9,7 @@ const testimonials = [
         role: 'CEO, TechStartup',
         avatar: 'RS',
         avatarColor: '#00d4ff',
-        text: 'Nexora transformed our outdated platform into a blazing-fast, modern web app. The attention to detail and communication throughout was exceptional. Delivered on time and above expectations.',
+        text: 'SHARK transformed our outdated platform into a blazing-fast, modern web app. The attention to detail and communication throughout was exceptional. Delivered on time and above expectations.',
         rating: 5,
     },
     {

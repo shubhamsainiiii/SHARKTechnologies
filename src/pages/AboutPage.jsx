@@ -40,7 +40,7 @@ export function AboutPage() {
                             <span style={{ color: 'var(--accent-green)' }}>Things That Last</span>
                         </h1>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.75', marginBottom: '16px' }}>
-                            Nexora is a small, focused digital agency founded in 2020. We've worked with 30+ clients across India, the US, and Europe — from seed-stage startups to established enterprises.
+                            SHARK is a small, focused digital agency founded in 2020. We've worked with 30+ clients across India, the US, and Europe — from seed-stage startups to established enterprises.
                         </p>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.75' }}>
                             We're not a factory. We're a craft shop. Every project gets our full attention and best thinking.

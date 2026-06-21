@@ -60,7 +60,7 @@ export default function Footer() {
                                 fontFamily: 'Syne, sans-serif', color: '#000',
                             }}>NX</div>
                             <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: '700', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
-                                Nexora<span style={{ color: 'var(--accent)' }}>.</span>
+                                SHARK<span style={{ color: 'var(--accent)' }}>.</span>
                             </span>
                         </Link>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: '1.7', maxWidth: '240px' }}>
@@ -150,7 +150,7 @@ export default function Footer() {
                             Get In Touch
                         </h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                            <a href="mailto:hello@nexora.dev" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', textDecoration: 'none', transition: 'color 0.2s' }}
+                            <a href="mailto:sharktechnologies@gmail.com" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', textDecoration: 'none', transition: 'color 0.2s' }}
                                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                                 onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
                             >
@@ -160,7 +160,7 @@ export default function Footer() {
                                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                                 onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
                             >
-                                +91 7691888950
+                                +91 7727922769
                             </a>
                             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: '1.5' }}>
                                 India — Remote Worldwide
@@ -203,7 +203,7 @@ export default function Footer() {
                     color: 'var(--text-muted)',
                     fontSize: '0.8rem',
                 }}>
-                    <span>© {year} Nexora. All rights reserved.</span>
+                    <span>© {year} SHARK. All rights reserved.</span>
                     <div style={{ display: 'flex', gap: '20px' }}>
                         <Link to="/privacy" style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.2s' }}
                             onMouseEnter={e => e.target.style.color = 'var(--accent)'}

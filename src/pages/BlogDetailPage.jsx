@@ -623,7 +623,7 @@ export default function BlogDetailPage() {
                             }}>{post.author.avatar}</div>
                             <div>
                                 <div style={{ fontFamily: 'Syne, sans-serif', fontWeight: '700', fontSize: '0.95rem', color: 'var(--text-primary)', marginBottom: '3px' }}>{post.author.name}</div>
-                                <div style={{ color: post.author.color, fontSize: '0.78rem', fontFamily: 'Syne, sans-serif', fontWeight: '600', marginBottom: '8px' }}>{post.author.role} @ Nexora</div>
+                                <div style={{ color: post.author.color, fontSize: '0.78rem', fontFamily: 'Syne, sans-serif', fontWeight: '600', marginBottom: '8px' }}>{post.author.role} @ SHARK</div>
                                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.84rem', lineHeight: '1.6' }}>
                                     Passionate about building performant, beautiful web products. Writing about code, design, and shipping things that work.
                                 </p>

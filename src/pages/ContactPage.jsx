@@ -5,8 +5,8 @@
 
 // export function ContactPage() {
 //     const info = [
-//         { icon: FiMail, label: 'Email Us', value: 'hello@nexora.dev', href: 'mailto:hello@nexora.dev' },
-//         { icon: FiPhone, label: 'Call Us', value: '+91 99999 99999', href: 'tel:+919999999999' },
+//         { icon: FiMail, label: 'Email Us', value: 'sharktechnologies@gmail.com', href: 'mailto:sharktechnologies@gmail.com' },
+//         { icon: FiPhone, label: 'Call Us', value: '+91 7727922769', href: 'tel:+919999999999' },
 //         { icon: FiMapPin, label: 'Location', value: 'India — Remote Worldwide', href: null },
 //     ];
 
@@ -108,8 +108,8 @@
 
 // export function ContactPage() {
 //     const info = [
-//         { icon: FiMail, label: 'Email Us', value: 'hello@nexora.dev', href: 'mailto:hello@nexora.dev' },
-//         { icon: FiPhone, label: 'Call Us', value: '+91 99999 99999', href: 'tel:+919999999999' },
+//         { icon: FiMail, label: 'Email Us', value: 'sharktechnologies@gmail.com', href: 'mailto:sharktechnologies@gmail.com' },
+//         { icon: FiPhone, label: 'Call Us', value: '+91 7727922769', href: 'tel:+919999999999' },
 //         { icon: FiMapPin, label: 'Location', value: 'India — Remote Worldwide', href: null },
 //     ];
 
@@ -322,8 +322,8 @@ const steps = [
 export function ContactPage() {
 
     const info = [
-        { icon: FiMail, label: "Email Us", value: "hello@nexora.dev", href: "mailto:hello@nexora.dev" },
-        { icon: FiPhone, label: "Call Us", value: "+91 99999 99999", href: "tel:+919999999999" },
+        { icon: FiMail, label: "Email Us", value: "sharktechnologies@gmail.com", href: "mailto:sharktechnologies@gmail.com" },
+        { icon: FiPhone, label: "Call Us", value: "+91 7727922769", href: "tel:+919999999999" },
         { icon: FiMapPin, label: "Location", value: "India — Remote Worldwide", href: null },
     ];
 

@@ -27,8 +27,8 @@ export const techCategories = [
 ];
 
 export const stats = [
-    { value: '50+', label: 'Projects Delivered', suffix: '' },
-    { value: '30+', label: 'Happy Clients', suffix: '' },
-    { value: '5+', label: 'Years Experience', suffix: '' },
-    { value: '98', label: 'Client Satisfaction', suffix: '%' },
+    { value: '10+', label: 'Projects Delivered', suffix: '' },
+    { value: '5+', label: 'Happy Clients', suffix: '' },
+    { value: '2+', label: 'Years Experience', suffix: '' },
+    { value: '100', label: 'Client Satisfaction', suffix: '%' },
 ];

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // SectionTitle.jsx
 import { motion } from 'framer-motion';
 // Button.jsx
