@@ -1,32 +1,3 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { HelmetProvider } from "react-helmet-async";
-// import { ScrollToTop } from "./components/common";
-// import Navbar from './components/common/Navbar';
-// import HomePage from "./pages/HomePage";
-// import Footer from './components/common/Footer';
-
-
-// export default function App() {
-//   return (
-//     <HelmetProvider>
-//       <BrowserRouter>
-//         <ScrollToTop />
-
-//         <Navbar />
-
-//         <main>
-//           <Routes>
-//             <Route path="/" element={<HomePage />} />
-//           </Routes>
-//         </main>
-
-//         <Footer />
-//       </BrowserRouter>
-//     </HelmetProvider>
-//   );
-// }
-
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
