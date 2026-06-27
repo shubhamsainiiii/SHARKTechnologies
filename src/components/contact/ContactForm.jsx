@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiSend, FiCheck, FiUser, FiMail, FiMessageSquare, FiPhone } from 'react-icons/fi';
+import { FiSend, FiCheck, FiUser, FiMail, FiMessageSquare, FiPhone, FiCheckCircle } from 'react-icons/fi';
 
 export default function ContactForm() {
-    const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+    const [form, setForm] = useState({ name: '', email: '', phone: '', subhject: '', message: '' });
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [focused, setFocused] = useState('');
@@ -14,9 +14,24 @@ export default function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        await new Promise(r => setTimeout(r, 1500));
-        setLoading(false);
-        setSuccess(true);
+
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/contact`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) throw new Error(data.message || "Something went wrong");
+
+            setSuccess(true);
+        } catch (err) {
+            alert(err.message);
+        } finally {
+            setLoading(false);
+        }
     };
 
     const inputStyle = (field) => ({
@@ -63,14 +78,26 @@ export default function ContactForm() {
                     <FiCheck />
                 </div>
 
-                <h3 style={{
-                    fontFamily: 'Syne, sans-serif',
-                    fontWeight: '700',
-                    fontSize: '1.3rem',
-                    color: 'var(--text-primary)',
-                    marginBottom: '10px'
-                }}>
-                    Message Sent! 🎉
+                <h3
+                    style={{
+                        fontFamily: 'Syne, sans-serif',
+                        fontWeight: '700',
+                        fontSize: '1.3rem',
+                        color: 'var(--text-primary)',
+                        marginBottom: '10px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                    }}
+                >
+                    <FiCheckCircle
+                        style={{
+                            color: 'var(--accent-green)',
+                            fontSize: '1.5rem',
+                        }}
+                    />
+                    Message Sent!
                 </h3>
 
                 <p style={{
@@ -186,6 +213,32 @@ export default function ContactForm() {
                         style={inputStyle('email')}
                     />
                 </div>
+            </div>
+
+            <div style={{ position: 'relative' }}>
+                <FiMessageSquare
+                    style={{
+                        position: 'absolute',
+                        left: '14px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        color: focused === 'subject'
+                            ? 'var(--accent)'
+                            : 'var(--text-muted)',
+                    }}
+                />
+
+                <input
+                    name="subject"
+                    type="text"
+                    placeholder="Subject"
+                    value={form.subject}
+                    onChange={handleChange}
+                    onFocus={() => setFocused('subject')}
+                    onBlur={() => setFocused('')}
+                    required
+                    style={inputStyle('subject')}
+                />
             </div>
 
             <div style={{ position: 'relative' }}>
