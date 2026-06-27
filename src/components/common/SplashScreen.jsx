@@ -1,106 +1,171 @@
 /* eslint-disable no-unused-vars */
-import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import logo from "../../assets/images/logoo.png";
 
-const particles = Array.from({ length: 30 }, (_, i) => ({
+const particles = Array.from({ length: 50 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    size: Math.random() * 3 + 1.5,
+    size: Math.random() * 2 + 1,
     delay: Math.random() * 1,
-    duration: Math.random() * 3 + 2,
+    duration: Math.random() * 2 + 2,
 }));
 
 export default function SplashScreen() {
-    const [loading, setLoading] = useState(true);
-
+    const [showParticles, setShowParticles] = useState(false);
     useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 2800);
+        const timer = setTimeout(() => {
+            setShowParticles(true);
+        }, 350);
+
         return () => clearTimeout(timer);
     }, []);
-
     return (
-        <AnimatePresence>
-            {loading && (
-                <motion.div
-                    initial={{ opacity: 1 }}
-                    exit={{ opacity: 0, scale: 1.05 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="fixed inset-0 z-[9999] bg-[#050A16] flex items-center justify-center overflow-hidden"
-                >
-                    {/* Ambient Glow — smaller on mobile */}
+        <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+            className="fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden bg-[#050A16]"
+        >
+            {/* Background Glow */}
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    scale: 0.6,
+                }}
+                animate={{
+                    opacity: [0.15, 0.35, 0.15],
+                    scale: [1, 1.25, 1],
+                }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 3,
+                    ease: "easeInOut",
+                }}
+                className="absolute w-[260px] h-[260px] sm:w-[430px] sm:h-[430px] rounded-full"
+                style={{
+                    background:
+                        "radial-gradient(circle,#00bfff55 0%,transparent 70%)",
+                }}
+            />
+
+            {/* Outer Ring */}
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    scale: .8
+                }}
+                animate={{ rotate: 360 }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 8,
+                    ease: "linear",
+                }}
+                className="absolute w-56 h-56 sm:w-80 sm:h-80 rounded-full border border-cyan-400/20"
+            />
+
+            {/* Inner Ring */}
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    scale: .8
+                }}
+                animate={{ rotate: -360 }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 5,
+                    ease: "linear",
+                }}
+                className="absolute w-40 h-40 sm:w-56 sm:h-56 rounded-full border border-dashed border-cyan-400/20"
+            />
+
+            {/* Floating Particles */}
+            {showParticles &&
+                particles.map((p) => (
                     <motion.div
-                        animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.35, 0.15] }}
-                        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                        className="absolute w-[260px] h-[260px] sm:w-[420px] sm:h-[420px] rounded-full"
-                        style={{ background: "radial-gradient(circle, #00BFFF55 0%, transparent 70%)" }}
+                        key={p.id}
+                        className="absolute rounded-full bg-cyan-400"
+                        style={{
+                            left: `${p.x}%`,
+                            top: `${p.y}%`,
+                            width: p.size,
+                            height: p.size,
+                        }}
+                        initial={{
+                            opacity: 0,
+                            scale: 0,
+                            y: 20,
+                        }}
+                        animate={{
+                            opacity: [0, 0.8, 0],
+                            y: [20, -20, -40],
+                            scale: [0, 1, 0],
+                        }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: p.duration,
+                            delay: p.delay,
+                            ease: "easeInOut",
+                        }}
                     />
+                ))
+            }
 
-                    {/* Outer Rotating Ring */}
-                    <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-                        className="absolute w-52 h-52 sm:w-72 sm:h-72 rounded-full"
-                        style={{ border: "1px solid rgba(0,191,255,0.2)" }}
-                    />
+            {/* Logo */}
+            <motion.img
+                src={logo}
+                alt="Shark Web & Cyber Solution"
+                className="relative z-20 w-40 sm:w-60"
+                style={{
+                    filter:
+                        "brightness(7) drop-shadow(0 0 25px rgba(0,191,255,.45))",
+                }}
+                initial={{
+                    opacity: 0,
+                    scale: 0,
+                    rotate: -15,
+                    y: 20,
+                }}
+                animate={{
+                    opacity: 1,
+                    scale: 1,
+                    rotate: 0,
+                    y: 0,
+                }}
+                transition={{
+                    duration: 1,
+                    ease: [0.22, 1, 0.36, 1],
+                }}
+            />
 
-                    {/* Inner Counter-Rotating Ring */}
-                    <motion.div
-                        animate={{ rotate: -360 }}
-                        transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
-                        className="absolute w-36 h-36 sm:w-52 sm:h-52 rounded-full"
-                        style={{ border: "1px dashed rgba(0,191,255,0.15)" }}
-                    />
+            {/* Pulse */}
+            <motion.div
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    scale: [1, 1.6],
+                    opacity: [0.4, 0],
+                }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 2,
+                }}
+                className="absolute w-44 h-44 sm:w-64 sm:h-64 rounded-full border border-cyan-400/20"
+            />
 
-                    {/* Floating Particles */}
-                    {particles.map((p) => (
-                        <motion.div
-                            key={p.id}
-                            className="absolute rounded-full bg-cyan-400"
-                            style={{
-                                left: `${p.x}%`,
-                                top: `${p.y}%`,
-                                width: p.size,
-                                height: p.size,
-                                opacity: 0,
-                            }}
-                            animate={{
-                                opacity: [0, 0.6, 0],
-                                y: [0, -20, -40],
-                                scale: [0.8, 1.2, 0.8],
-                            }}
-                            transition={{
-                                repeat: Infinity,
-                                duration: p.duration,
-                                delay: p.delay,
-                                ease: "easeInOut",
-                            }}
-                        />
-                    ))}
-
-                    {/* Logo */}
-                    <motion.div className="relative z-10 flex flex-col items-center gap-4">
-                        <motion.img
-                            src={logo}
-                            alt="Logo"
-                            style={{ filter: "brightness(7) " }}
-                            initial={{ opacity: 0, scale: 0.4, rotate: -15, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
-                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                            className="w-40 sm:w-56"
-                        />
-                    </motion.div>
-
-                    {/* Shimmer Sweep */}
-                    <motion.div
-                        initial={{ x: "-120%" }}
-                        animate={{ x: "220%" }}
-                        transition={{ repeat: Infinity, duration: 2.5, ease: "linear", delay: 1 }}
-                        className="absolute w-16 h-full bg-white/10 blur-2xl rotate-12 pointer-events-none"
-                    />
-                </motion.div>
-            )}
-        </AnimatePresence>
+            {/* Shine */}
+            <motion.div
+                initial={{ x: "-120%" }}
+                animate={{ x: "220%" }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 2.2,
+                    ease: "linear",
+                }}
+                className="absolute w-24 h-full rotate-12 bg-white/10 blur-2xl"
+            />
+        </motion.div>
     );
 }

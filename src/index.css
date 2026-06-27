@@ -205,6 +205,7 @@ body::before {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    z-index: 0;
 }
 
 .btn-primary::before {
@@ -214,6 +215,7 @@ body::before {
     background: linear-gradient(135deg, #00ffcc, var(--accent));
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: -1; 
 }
 
 .btn-primary:hover::before {

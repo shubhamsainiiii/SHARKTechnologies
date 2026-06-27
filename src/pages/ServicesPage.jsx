@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { SectionTitle } from '../components/common/index.jsx';
 import { techCategories } from '../constants/techStack';
 import CtaBanner from '../components/home/CtaBanner';
+import { SERVICE_ICONS, ServiceIcon } from '../components/common/ServiceIcon.jsx';
 
 import {
     SiReact, SiNextdotjs, SiVuedotjs, SiTypescript, SiTailwindcss, SiFramer,
@@ -158,8 +159,8 @@ export default function ServicesPage() {
                                         <div style={{ position: 'absolute', top: 0, left: '28px', right: '28px', height: '2px', background: `linear-gradient(90deg, ${accent}, transparent)`, borderRadius: '0 0 2px 2px' }} />
 
                                         {/* Icon */}
-                                        <div style={{ width: '46px', height: '46px', background: `${accent}12`, border: `1px solid ${accent}28`, borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', marginBottom: '16px' }}>
-                                            {service.icon || '🌐'}
+                                        <div style={{ width: '46px', height: '46px', background: `${accent}12`, border: `1px solid ${accent}28`, borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                                            <ServiceIcon name={service.icon} size={22} color={accent} />
                                         </div>
 
                                         {/* Title + tagline */}

@@ -1,29 +1,44 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
-import { Toaster } from 'react-hot-toast';
-import { ScrollToTop } from './components/common';
-import Navbar from './components/common/Navbar';
-import HomePage from './pages/HomePage';
-import ServicesPage from './pages/ServicesPage';
-import ProjectsPage from './pages/ProjectsPage';
-import { BlogPage } from './pages/BlogPage';
-import { AboutPage } from './pages/AboutPage';
-import { ContactPage } from './pages/ContactPage';
-import { NotFoundPage } from './pages/NotFoundPage';
-import Footer from './components/common/Footer';
-import ProjectDetailPage from './pages/ProjectDetailPage';
-import BlogDetailPage from './pages/BlogDetailPage';
-import ServiceDetailPage from './pages/Servicedetailpage';
-import TestimonialPage from './pages/TestimonialPage';
-import SplashScreen from './components/common/SplashScreen';
-
+import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import { Toaster } from "react-hot-toast";
+import { ScrollToTop } from "./components/common";
+import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
+import SplashScreen from "./components/common/SplashScreen";
+import HomePage from "./pages/HomePage";
+import ServicesPage from "./pages/ServicesPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import { BlogPage } from "./pages/BlogPage";
+import { AboutPage } from "./pages/AboutPage";
+import { ContactPage } from "./pages/ContactPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
+import ServiceDetailPage from "./pages/Servicedetailpage";
+import TestimonialPage from "./pages/TestimonialPage";
+import { AnimatePresence } from "framer-motion"; // ✅ add this
 
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <SplashScreen />
+
+        {/* ✅ AnimatePresence enables the exit animation */}
+        <AnimatePresence>
+          {showSplash && <SplashScreen key="splash" />}
+        </AnimatePresence>
+
         <ScrollToTop />
         <Navbar />
         <main>
@@ -46,11 +61,11 @@ export default function App() {
           position="bottom-right"
           toastOptions={{
             style: {
-              background: 'var(--bg-card)',
-              color: 'var(--text-primary)',
-              border: '1px solid var(--border)',
-              fontFamily: 'DM Sans, sans-serif',
-              fontSize: '0.875rem',
+              background: "var(--bg-card)",
+              color: "var(--text-primary)",
+              border: "1px solid var(--border)",
+              fontFamily: "DM Sans, sans-serif",
+              fontSize: "0.875rem",
             },
           }}
         />
