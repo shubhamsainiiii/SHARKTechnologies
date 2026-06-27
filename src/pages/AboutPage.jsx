@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // AboutPage.jsx
 
 import { FiTarget, FiHeart, FiZap } from 'react-icons/fi';
@@ -6,10 +7,20 @@ import { motion } from 'framer-motion';
 import CtaBanner from '../components/home/CtaBanner';
 
 const team = [
-    { name: 'Arjun Verma', role: 'Founder & Lead Developer', avatar: 'AV', color: '#00d4ff', bio: '7+ years building full-stack products. Previously at Razorpay and Flipkart.' },
-    { name: 'Sneha Patel', role: 'UI/UX Lead', avatar: 'SP', color: '#a78bfa', bio: 'Design systems architect with a passion for accessible, beautiful interfaces.' },
-    { name: 'Rohan Das', role: 'Backend Engineer', avatar: 'RD', color: '#00ff88', bio: 'Microservices & cloud infrastructure specialist. AWS certified.' },
-    { name: 'Meera Nair', role: 'Mobile Developer', avatar: 'MN', color: '#ff6b35', bio: 'React Native and Flutter expert. Published 15+ apps on App Store & Play Store.' },
+    {
+        name: 'Ravikant Indora',
+        role: 'Founder',
+        avatar: 'RI',
+        color: '#00d4ff',
+        bio: 'Visionary behind SharkTech Innovations, driving digital excellence and building products that make an impact.',
+    },
+    {
+        name: 'Shubham Saini',
+        role: 'Co-Founder',
+        avatar: 'SS',
+        color: '#a78bfa',
+        bio: 'Tech strategist and builder focused on delivering scalable, high-performance digital solutions.',
+    },
 ];
 
 const values = [
@@ -65,13 +76,73 @@ export function AboutPage() {
                             const Icon = v.icon;
                             return (
                                 <motion.div key={v.title}
-                                    initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                                    style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '20px', padding: '36px 32px' }}>
-                                    <div style={{ width: '48px', height: '48px', background: `${v.color}15`, border: `1px solid ${v.color}30`, borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', color: v.color, marginBottom: '20px' }}>
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1 }}
+                                    whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                                    style={{
+                                        background: 'var(--bg-card)',
+                                        border: '1px solid var(--border)',
+                                        borderRadius: '20px',
+                                        padding: '36px 32px',
+                                        position: 'relative',
+                                        overflow: 'hidden',
+                                        cursor: 'default',
+                                        transition: 'border-color 0.3s',
+                                    }}
+                                    onMouseEnter={e => {
+                                        e.currentTarget.style.borderColor = `${v.color}40`;
+                                        e.currentTarget.querySelector('.icon-box').style.background = `${v.color}25`;
+                                        e.currentTarget.querySelector('.icon-box').style.borderColor = `${v.color}60`;
+                                        e.currentTarget.querySelector('.val-glow').style.opacity = '1';
+                                    }}
+                                    onMouseLeave={e => {
+                                        e.currentTarget.style.borderColor = 'var(--border)';
+                                        e.currentTarget.querySelector('.icon-box').style.background = `${v.color}15`;
+                                        e.currentTarget.querySelector('.icon-box').style.borderColor = `${v.color}30`;
+                                        e.currentTarget.querySelector('.val-glow').style.opacity = '0';
+                                    }}
+                                >
+                                    {/* Glow blob */}
+                                    <div className="val-glow" style={{
+                                        position: 'absolute',
+                                        top: '-40px', left: '-40px',
+                                        width: '160px', height: '160px',
+                                        background: `radial-gradient(circle, ${v.color}12 0%, transparent 70%)`,
+                                        pointerEvents: 'none',
+                                        opacity: 0,
+                                        transition: 'opacity 0.4s',
+                                    }} />
+
+                                    <div className="icon-box" style={{
+                                        width: '48px', height: '48px',
+                                        background: `${v.color}15`,
+                                        border: `1px solid ${v.color}30`,
+                                        borderRadius: '12px',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        fontSize: '20px', color: v.color,
+                                        marginBottom: '20px',
+                                        transition: 'background 0.3s, border-color 0.3s',
+                                        position: 'relative', zIndex: 1,
+                                    }}>
                                         <Icon />
                                     </div>
-                                    <h3 style={{ fontFamily: 'Syne, sans-serif', fontWeight: '700', fontSize: '1.1rem', color: 'var(--text-primary)', marginBottom: '10px' }}>{v.title}</h3>
-                                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: '1.7' }}>{v.desc}</p>
+
+                                    <h3 style={{
+                                        fontFamily: 'Syne, sans-serif', fontWeight: '700',
+                                        fontSize: '1.1rem', color: 'var(--text-primary)',
+                                        marginBottom: '10px', position: 'relative', zIndex: 1,
+                                    }}>
+                                        {v.title}
+                                    </h3>
+
+                                    <p style={{
+                                        color: 'var(--text-secondary)', fontSize: '0.875rem',
+                                        lineHeight: '1.7', position: 'relative', zIndex: 1,
+                                    }}>
+                                        {v.desc}
+                                    </p>
                                 </motion.div>
                             );
                         })}
@@ -85,10 +156,18 @@ export function AboutPage() {
                     <div style={{ textAlign: 'center', marginBottom: '56px' }}>
                         <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                             style={{ fontFamily: 'Syne, sans-serif', fontWeight: '800', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
-                            Meet the Team
+                            The Minds Behind{' '} <span style={{
+                                background: 'linear-gradient(135deg, var(--accent) 0%, #00ffcc 100%)',
+                                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                            }}>SHARK</span>
                         </motion.h2>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
+                    <div style={{
+                        display: 'grid', // Team grid mein
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                        maxWidth: '680px',
+                        margin: '0 auto', gap: '20px'
+                    }}>
                         {team.map((member, i) => (
                             <motion.div key={member.name}
                                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}

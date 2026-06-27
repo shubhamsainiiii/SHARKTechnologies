@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FiSend, FiCheck, FiUser, FiMail, FiMessageSquare, FiPhone, FiCheckCircle } from 'react-icons/fi';
 
 export default function ContactForm() {
-    const [form, setForm] = useState({ name: '', email: '', phone: '', subhject: '', message: '' });
+    const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [focused, setFocused] = useState('');
