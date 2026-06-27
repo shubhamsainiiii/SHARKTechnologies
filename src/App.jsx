@@ -14,6 +14,8 @@ import Footer from './components/common/Footer';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import ServiceDetailPage from './pages/Servicedetailpage';
+import TestimonialPage from './pages/TestimonialPage';
+import SplashScreen from './components/common/SplashScreen';
 
 
 
@@ -21,6 +23,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <SplashScreen />
         <ScrollToTop />
         <Navbar />
         <main>
@@ -34,6 +37,7 @@ export default function App() {
             <Route path="/blog/:slug" element={<BlogDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/testimonial" element={<TestimonialPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

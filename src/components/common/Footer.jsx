@@ -1,15 +1,17 @@
+/* eslint-disable no-unused-vars */
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiTwitter, FiInstagram, FiArrowUpRight } from 'react-icons/fi';
 import { navLinks } from '../../constants/navLinks';
+import logo from '../../assets/images/logoo.png'
 
 const socialIcons = {
     FiGithub, FiLinkedin, FiTwitter, FiInstagram,
 };
 
 const services = [
-    'Web Development',
-    'Mobile Apps',
+    'Web & App Development',
+    'Cyber Solutions',
     'UI/UX Design',
     'API Development',
     'Cloud Solutions',
@@ -50,17 +52,36 @@ export default function Footer() {
                 }}>
                     {/* Brand */}
                     <div style={{ gridColumn: 'span 1' }}>
-                        <Link to="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-                            <div style={{
-                                width: '36px', height: '36px',
-                                background: 'linear-gradient(135deg, var(--accent), #0077aa)',
-                                borderRadius: '10px',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                fontSize: '14px', fontWeight: '800',
-                                fontFamily: 'Syne, sans-serif', color: '#000',
-                            }}>NX</div>
-                            <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: '700', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
-                                SHARK<span style={{ color: 'var(--accent)' }}>.</span>
+                        <Link
+                            to="/"
+                            style={{
+                                textDecoration: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                                marginBottom: '20px',
+                            }}
+                        >
+                            <img
+                                src={logo}
+                                alt="Shark Technologies Logo"
+                                style={{
+                                    width: '42px',
+                                    height: '42px',
+                                    objectFit: 'contain',
+                                    filter: 'brightness(7)',
+                                }}
+                            />
+
+                            <span
+                                style={{
+                                    fontFamily: 'Syne, sans-serif',
+                                    fontWeight: '700',
+                                    fontSize: '1.1rem',
+                                    color: 'var(--text-primary)',
+                                }}
+                            >
+                                SHARK
                             </span>
                         </Link>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: '1.7', maxWidth: '240px' }}>
