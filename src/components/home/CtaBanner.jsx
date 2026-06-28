@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -108,12 +109,13 @@ export default function CtaBanner() {
                         <a
                             href="mailto:sharktechnologies@gmail.com"
                             style={{
-                                padding: '16px 36px',
+                                padding: '16px 24px',
                                 borderRadius: '14px',
                                 fontSize: '1rem',
                                 textDecoration: 'none',
                                 display: 'inline-flex',
                                 alignItems: 'center',
+                                justifyContent: 'center',
                                 gap: '8px',
                                 background: 'rgba(255,255,255,0.05)',
                                 border: '1px solid var(--border)',
@@ -121,6 +123,9 @@ export default function CtaBanner() {
                                 fontFamily: 'Syne, sans-serif',
                                 fontWeight: '600',
                                 transition: 'all 0.3s ease',
+                                maxWidth: '100%',
+                                wordBreak: 'break-word',
+                                overflowWrap: 'anywhere',
                             }}
                             onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.09)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
                             onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
